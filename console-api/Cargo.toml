@@ -1,27 +1,19 @@
 [package]
-name = "console-api"
+name = "hds_console-api"
 version = "0.6.0"
 license = "MIT"
 edition = "2021"
 rust-version = "1.64.0"
 authors = ["Eliza Weisman <eliza@buoyant.io>", "Tokio Contributors <team@tokio.rs>",]
 readme = "README.md"
-repository = "https://github.com/tokio-rs/console/"
-homepage = "https://github.com/tokio-rs/console/blob/main/console-api"
+repository = "https://github.com/hds/hds_console/"
+homepage = "https://github.com/hds/hds_console/blob/main/console-api"
 description = """
-Protobuf wire format bindings for the Tokio console.
+This is a test crate, do not use.
 """
 categories = [
-    "development-tools::debugging",
-    "development-tools::profiling",
-    "asynchronous",
 ]
 keywords = [
-    "tracing",
-    "tokio-console",
-    "debugging",
-    "async",
-    "tonic",
 ]
 
 [features]

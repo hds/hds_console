@@ -18,7 +18,7 @@
 //! hand, is busy most of the time.
 use std::time::Duration;
 
-use console_subscriber::ConsoleLayer;
+use hds_console_subscriber::ConsoleLayer;
 use tokio::{sync::mpsc, task};
 use tracing::info;
 

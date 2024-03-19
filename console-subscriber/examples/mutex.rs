@@ -4,7 +4,7 @@ use tokio::{sync::Mutex, task};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    console_subscriber::init();
+    hds_console_subscriber::init();
     task::Builder::default()
         .name("main-task")
         .spawn(async move {

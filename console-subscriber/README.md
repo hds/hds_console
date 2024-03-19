@@ -154,7 +154,7 @@ If the runtime emits compatible `tracing` events, enabling the console is as
 simple as adding the following line to your `main` function:
 
 ```rust
-console_subscriber::init();
+hds_console_subscriber::init();
 ```
 
 This sets the [default `tracing` subscriber][default] to serve console telemetry
@@ -167,7 +167,7 @@ For programmatic configuration, a [builder interface][builder] is also provided:
 ```rust
 use std::time::Duration;
 
-console_subscriber::ConsoleLayer::builder()
+hds_console_subscriber::ConsoleLayer::builder()
     // set how long the console will retain data from completed tasks
     .retention(Duration::from_secs(60))
     // set the address the server is bound to
@@ -184,7 +184,7 @@ use tracing_subscriber::prelude::*;
 
 // spawn the console server in the background,
 // returning a `Layer`:
-let console_layer = console_subscriber::spawn();
+let console_layer = hds_console_subscriber::spawn();
 
 // build a `Subscriber` by combining layers with a
 // `tracing_subscriber::Registry`:

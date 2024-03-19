@@ -97,7 +97,7 @@ to **instrument an application using Tokio**, add a dependency on the
 `main` function:
 
 ```rust
-console_subscriber::init();
+hds_console_subscriber::init();
 ```
 
 notes:
@@ -169,9 +169,9 @@ flags and arguments:
 
 ```console
 $ tokio-console --help
-The Tokio console: a debugger for async Rust.
+This is a test crate, do not use.
 
-Usage: tokio-console[EXE] [OPTIONS] [TARGET_ADDR] [COMMAND]
+Usage: hds_tokio-console[EXE] [OPTIONS] [TARGET_ADDR] [COMMAND]
 
 Commands:
   gen-config
