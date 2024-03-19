@@ -4,8 +4,8 @@ use console_api::{
     field::Value,
     instrument::{instrument_client::InstrumentClient, InstrumentRequest},
 };
-use console_subscriber::ServerParts;
 use futures::stream::StreamExt;
+use hds_console_subscriber::ServerParts;
 use tokio::{io::DuplexStream, task};
 use tonic::transport::{Channel, Endpoint, Server, Uri};
 use tower::service_fn;
@@ -49,7 +49,7 @@ where
     use tracing_subscriber::prelude::*;
 
     let (client_stream, server_stream) = tokio::io::duplex(1024);
-    let (console_layer, server) = console_subscriber::ConsoleLayer::builder().build();
+    let (console_layer, server) = hds_console_subscriber::ConsoleLayer::builder().build();
     let registry = tracing_subscriber::registry().with(console_layer);
 
     let mut test_state = TestState::new();
@@ -149,7 +149,7 @@ where
 /// 1. Advances to: `ServerStarted`
 /// 2. Waits for: `UpdatesRecorded`
 async fn console_server(
-    server: console_subscriber::Server,
+    server: hds_console_subscriber::Server,
     server_stream: DuplexStream,
     mut test_state: TestState,
 ) {

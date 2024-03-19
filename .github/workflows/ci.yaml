@@ -74,13 +74,13 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run cargo test (API)
-        run: cargo test -p console-api
+        run: cargo test -p hds_console-api
 
       - name: Run cargo test (subscriber)
-        run: cargo test -p console-subscriber
+        run: cargo test -p hds_console-subscriber
 
       - name: Run cargo test (console)
-        run: cargo test -p tokio-console --locked
+        run: cargo test -p hds_tokio-console --locked
 
   lints:
     name: Lints

@@ -18,7 +18,7 @@ use {
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let cwd = fs::canonicalize(".").await?;
     let addr = cwd.join("console-server");
-    console_subscriber::ConsoleLayer::builder()
+    hds_console_subscriber::ConsoleLayer::builder()
         .server_addr(&*addr)
         .init();
     info!(

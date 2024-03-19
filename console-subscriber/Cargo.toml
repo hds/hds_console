@@ -1,27 +1,19 @@
 [package]
-name = "console-subscriber"
+name = "hds_console-subscriber"
 version = "0.2.0"
 license = "MIT"
 edition = "2021"
 rust-version = "1.64.0"
 authors = ["Eliza Weisman <eliza@buoyant.io>", "Tokio Contributors <team@tokio.rs>",]
 readme = "README.md"
-repository = "https://github.com/tokio-rs/console/"
-homepage = "https://github.com/tokio-rs/console/blob/main/console-subscriber"
+repository = "https://github.com/hds/hds_console/"
+homepage = "https://github.com/hds/hds_console/blob/main/console-subscriber"
 description = """
-A `tracing-subscriber::Layer` for collecting Tokio console telemetry.
+This is a test crate, do not use.
 """
 categories = [
-    "development-tools::debugging",
-    "development-tools::profiling",
-    "asynchronous",
 ]
 keywords = [
-    "tracing",
-    "tracing-subscriber",
-    "tokio-console",
-    "debugging",
-    "async",
 ]
 
 [features]
@@ -35,7 +27,7 @@ crossbeam-utils = "0.8.7"
 tokio = { version = "^1.21", features = ["sync", "time", "macros", "tracing"] }
 tokio-stream = { version = "0.1", features = ["net"] }
 thread_local = "1.1.3"
-console-api = { version = "0.6.0", path = "../console-api", features = ["transport"] }
+console-api = { version = "0.6.0", path = "../console-api", features = ["transport"], package = "hds_console-api" }
 tonic = { version = "0.10", features = ["transport"] }
 tracing-core = "0.1.24"
 tracing = "0.1.26"

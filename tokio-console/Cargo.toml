@@ -1,29 +1,20 @@
 [package]
-name = "tokio-console"
+name = "hds_tokio-console"
 version = "0.1.10"
 license = "MIT"
-repository = "https://github.com/tokio-rs/console"
+repository = "https://github.com/hds/hds_console/"
 edition = "2021"
 rust-version = "1.64.0"
 authors = ["Eliza Weisman <eliza@buoyant.io>", "Tokio Contributors <team@tokio.rs>",]
 readme = "README.md"
-default-run = "tokio-console"
-homepage = "https://github.com/tokio-rs/console/tree/main/tokio-console"
+default-run = "hds_tokio-console"
+homepage = "https://github.com/hds/hds_console/tree/main/tokio-console"
 description = """
-The Tokio console: a debugger for async Rust.
+This is a test crate, do not use.
 """
 categories = [
-    "development-tools::debugging",
-    "development-tools::profiling",
-    "command-line-utilities",
-    "asynchronous",
 ]
 keywords = [
-    "tracing",
-    "tokio-console",
-    "debugging",
-    "console",
-    "async",
 ]
 
 [package.metadata.wix]
@@ -33,7 +24,7 @@ license = false
 eula = false
 
 [dependencies]
-console-api = { version = "0.6.0", path = "../console-api", features = ["transport"] }
+console-api = { version = "0.6.0", path = "../console-api", features = ["transport"], package = "hds_console-api" }
 # Use 1.64.0 compatible version of `clap@4.1.14`.
 clap = { version = "~4.1.14", features = ["wrap_help", "cargo", "derive", "env"] }
 clap_complete = "~4.1.6"
