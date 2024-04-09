@@ -24,7 +24,7 @@ license = false
 eula = false
 
 [dependencies]
-console-api = { version = "0.6.0", path = "../console-api", features = ["transport"], package = "hds_console-api" }
+console-api = { version = "0.6.1", path = "../console-api", features = ["transport"], package = "hds_console-api" }
 # Use 1.64.0 compatible version of `clap@4.1.14`.
 clap = { version = "~4.1.14", features = ["wrap_help", "cargo", "derive", "env"] }
 clap_complete = "~4.1.6"

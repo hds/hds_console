@@ -68,7 +68,7 @@ confirm() {
 #     0 if the crate exists, 0 if it does not exist.
 crate_path() {
     local crate="$1"
-    local mycoprefix='mycelium-';
+    local mycoprefix='hds_';
     if [[ -d $crate ]]; then
         echo "$crate"
     elif [[ -d "${crate#"$mycoprefix"}" ]]; then

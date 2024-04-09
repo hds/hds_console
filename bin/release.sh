@@ -96,8 +96,8 @@ update_version() {
 
     # If we're releasing console-api, we need to update its version in
     # the other crates in the workspace too.
-    if [[ "$crate" == "console-api" ]]; then
-        local cargo_upgrade=(cargo upgrade --offline -p console-api@$version)
+    if [[ "$crate" == "hds_console-api" ]]; then
+        local cargo_upgrade=(cargo upgrade --offline -p hds_console-api@$version)
         if [[ "$verbose" ]]; then
             cargo_upgrade+=("$verbose")
         fi
@@ -256,13 +256,13 @@ else
 fi
 
 case "$crate" in
-    console-subscriber)
+    hds_console-subscriber)
         slug="subscriber"
         ;;
-    console-api)
+    hds_console-api)
         slug="api"
         ;;
-    tokio-console)
+    hds_tokio-console)
         slug="console"
         ;;
     *)
