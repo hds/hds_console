@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## hds_console-subscriber-v0.2.1 - (2024-04-09)
+
+[79aa244](https://github.com/tokio-rs/console/commit/79aa2449220f7b0ea11cec0afc904a707442e48c)...[79aa244](https://github.com/tokio-rs/console/commit/79aa2449220f7b0ea11cec0afc904a707442e48c)
+
+
+### Added
+
+- Replace target column with kind column in tasks view ([#478](https://github.com/tokio-rs/console/issues/478)) ([903d9fa](https://github.com/tokio-rs/console/commit/903d9fa9f9d2dddec2235206b792c264ed9892fb))
+- Reduce retention period to fit in max message size ([#503](https://github.com/tokio-rs/console/issues/503)) ([bd3dd71](https://github.com/tokio-rs/console/commit/bd3dd71eb0645c028858967ed5b3f14ed34d0605))
+- Support grpc-web and add `grpc-web` feature ([#498](https://github.com/tokio-rs/console/issues/498)) ([4150253](https://github.com/tokio-rs/console/commit/41502531396106b551a9dde2d3a83ddb0beac774))
+
+### Documented
+
+- Add a grpc-web app example ([#526](https://github.com/tokio-rs/console/issues/526)) ([4af30f2](https://github.com/tokio-rs/console/commit/4af30f2c1df919a1e0d4f448534d15b4a1bb836b))
+
+### Fixed
+
+- Don't save poll_ops if no-one is receiving them ([#501](https://github.com/tokio-rs/console/issues/501)) ([1656c79](https://github.com/tokio-rs/console/commit/1656c791af35bb0500bb6dd3c60344a0ceb12520), fixes [#184](https://github.com/tokio-rs/console/issues/184))
+
 ## console-subscriber-v0.2.0 - (2023-09-29)
 
 [c8c4a85](https://github.com/tokio-rs/console/commit/c8c4a85df2da55c9745df6f38e19631e84ed0cf5)...[c8c4a85](https://github.com/tokio-rs/console/commit/c8c4a85df2da55c9745df6f38e19631e84ed0cf5)
