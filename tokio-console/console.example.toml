@@ -5,6 +5,7 @@ warnings = [
     'lost-waker',
     'never-yielded',
 ]
+magic = false
 log_directory = '/tmp/tokio-console/logs'
 retention = '6s'
 

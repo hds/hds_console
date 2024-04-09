@@ -210,6 +210,11 @@ Options:
           
           [env: RUST_LOG=]
 
+      --magic
+          Magic
+          
+          Support magic!
+
   -W, --warn <WARNINGS>...
           Enable lint warnings.
           
