@@ -16,7 +16,7 @@ OPTIONS:
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    console_subscriber::init();
+    hds_console_subscriber::init();
     // spawn optional extras from CLI args
     // skip first which is command name
     for opt in std::env::args().skip(1) {

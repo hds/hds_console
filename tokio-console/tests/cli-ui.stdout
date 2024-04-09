@@ -1,6 +1,6 @@
-The Tokio console: a debugger for async Rust.
+This is a test crate, do not use.
 
-Usage: tokio-console[EXE] [OPTIONS] [TARGET_ADDR] [COMMAND]
+Usage: hds_tokio-console[EXE] [OPTIONS] [TARGET_ADDR] [COMMAND]
 
 Commands:
   gen-config

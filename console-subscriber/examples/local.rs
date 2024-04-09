@@ -9,7 +9,7 @@ use std::time::Duration;
 use tokio::{runtime, task};
 
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    console_subscriber::init();
+    hds_console_subscriber::init();
 
     let rt = runtime::Builder::new_current_thread()
         .enable_all()

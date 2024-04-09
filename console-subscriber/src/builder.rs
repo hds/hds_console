@@ -164,7 +164,7 @@ impl Builder {
     /// Connect to the TCP address `localhost:1234`:
     ///
     /// ```
-    /// # use console_subscriber::Builder;
+    /// # use hds_console_subscriber::Builder;
     /// use std::net::Ipv4Addr;
     /// let builder = Builder::default().server_addr((Ipv4Addr::LOCALHOST, 1234));
     /// ```
@@ -172,7 +172,7 @@ impl Builder {
     /// Connect to the UDS address `/tmp/tokio-console`:
     ///
     /// ```
-    /// # use console_subscriber::Builder;
+    /// # use hds_console_subscriber::Builder;
     /// # #[cfg(unix)]
     /// use std::path::Path;
     ///
@@ -388,12 +388,12 @@ impl Builder {
     /// # Further customization
     ///
     /// To add additional layers or replace the format layer, replace
-    /// `console_subscriber::Builder::init` with:
+    /// `hds_console_subscriber::Builder::init` with:
     ///
     /// ```rust
     /// use tracing_subscriber::prelude::*;
     ///
-    /// let console_layer = console_subscriber::ConsoleLayer::builder().spawn();
+    /// let console_layer = hds_console_subscriber::ConsoleLayer::builder().spawn();
     ///
     /// tracing_subscriber::registry()
     ///     .with(console_layer)
@@ -456,12 +456,12 @@ impl Builder {
     ///
     /// # Configuration
     ///
-    /// `console_subscriber::build` supports all of the environmental
-    /// configuration described at [`console_subscriber::init`].
+    /// `hds_console_subscriber::build` supports all of the environmental
+    /// configuration described at [`hds_console_subscriber::init`].
     ///
     /// # Differences from `init`
     ///
-    /// Unlike [`console_subscriber::init`], this function does *not* add a
+    /// Unlike [`hds_console_subscriber::init`], this function does *not* add a
     /// [`tracing_subscriber::fmt`] layer to the configured `Subscriber`. This means
     /// that this function will not log spans and events based on the value of the
     /// `RUST_LOG` environment variable. Instead, a user-provided [`fmt::Layer`] can
@@ -475,7 +475,7 @@ impl Builder {
     /// ```rust
     /// use tracing_subscriber::prelude::*;
     ///
-    /// let console_layer = console_subscriber::ConsoleLayer::builder()
+    /// let console_layer = hds_console_subscriber::ConsoleLayer::builder()
     ///     .with_default_env()
     ///     .spawn();
     ///
@@ -490,7 +490,7 @@ impl Builder {
     /// [sub]: https://docs.rs/tracing/latest/tracing/trait.Subscriber.html
     /// [`tracing_subscriber::fmt`]: https://docs.rs/tracing-subscriber/latest/tracing-subscriber/fmt/index.html
     /// [`fmt::Layer`]: https://docs.rs/tracing-subscriber/latest/tracing-subscriber/fmt/struct.Layer.html
-    /// [`console_subscriber::init`]: crate::init()
+    /// [`hds_console_subscriber::init`]: crate::init()
     #[must_use = "a `Layer` must be added to a `tracing::Subscriber` in order to be used"]
     pub fn spawn<S>(self) -> impl Layer<S>
     where
@@ -663,12 +663,12 @@ impl<'a> From<&'a Path> for ServerAddr {
 /// # Further customization
 ///
 /// To add additional layers or replace the format layer, replace
-/// `console_subscriber::init` with:
+/// `hds_console_subscriber::init` with:
 ///
 /// ```rust
 /// use tracing_subscriber::prelude::*;
 ///
-/// let console_layer = console_subscriber::spawn();
+/// let console_layer = hds_console_subscriber::spawn();
 ///
 /// tracing_subscriber::registry()
 ///     .with(console_layer)
@@ -677,9 +677,9 @@ impl<'a> From<&'a Path> for ServerAddr {
 ///     .init();
 /// ```
 ///
-/// Calling `console_subscriber::init` is equivalent to the following:
+/// Calling `hds_console_subscriber::init` is equivalent to the following:
 /// ```rust
-/// use console_subscriber::ConsoleLayer;
+/// use hds_console_subscriber::ConsoleLayer;
 ///
 /// ConsoleLayer::builder().with_default_env().init();
 /// ```
@@ -701,7 +701,7 @@ pub fn init() {
 ///
 /// This function is equivalent to the following:
 /// ```
-/// use console_subscriber::ConsoleLayer;
+/// use hds_console_subscriber::ConsoleLayer;
 ///
 /// let layer = ConsoleLayer::builder().with_default_env().spawn();
 /// # use tracing_subscriber::prelude::*;
@@ -717,12 +717,12 @@ pub fn init() {
 ///
 /// # Configuration
 ///
-/// `console_subscriber::build` supports all of the environmental
-/// configuration described at [`console_subscriber::init`].
+/// `hds_console_subscriber::build` supports all of the environmental
+/// configuration described at [`hds_console_subscriber::init`].
 ///
 /// # Differences from `init`
 ///
-/// Unlike [`console_subscriber::init`], this function does *not* add a
+/// Unlike [`hds_console_subscriber::init`], this function does *not* add a
 /// [`tracing_subscriber::fmt`] layer to the configured `Layer`. This means
 /// that this function will not log spans and events based on the value of the
 /// `RUST_LOG` environment variable. Instead, a user-provided [`fmt::Layer`] can
@@ -736,7 +736,7 @@ pub fn init() {
 /// ```rust
 /// use tracing_subscriber::prelude::*;
 /// tracing_subscriber::registry()
-///     .with(console_subscriber::spawn())
+///     .with(hds_console_subscriber::spawn())
 ///     .with(tracing_subscriber::fmt::layer())
 /// //  .with(...)
 ///     .init();
@@ -746,7 +746,7 @@ pub fn init() {
 /// [sub]: https://docs.rs/tracing/latest/tracing/trait.Subscriber.html
 /// [`tracing_subscriber::fmt`]: https://docs.rs/tracing-subscriber/latest/tracing-subscriber/fmt/index.html
 /// [`fmt::Layer`]: https://docs.rs/tracing-subscriber/latest/tracing-subscriber/fmt/struct.Layer.html
-/// [`console_subscriber::init`]: crate::init()
+/// [`hds_console_subscriber::init`]: crate::init()
 #[must_use = "a `Layer` must be added to a `tracing::Subscriber`in order to be used"]
 pub fn spawn<S>() -> impl Layer<S>
 where

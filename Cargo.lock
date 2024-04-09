@@ -305,48 +305,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d6417fe6fc03a8b533fd2177742eeb39a90c7233eedec7bac96d4d6b69a09449"
 
 [[package]]
-name = "console-api"
-version = "0.6.0"
-dependencies = [
- "futures-core",
- "prost",
- "prost-build",
- "prost-types",
- "tonic",
- "tonic-build",
- "tracing-core",
-]
-
-[[package]]
-name = "console-subscriber"
-version = "0.2.0"
-dependencies = [
- "console-api",
- "crossbeam-channel",
- "crossbeam-utils",
- "futures",
- "futures-task",
- "hdrhistogram",
- "http",
- "humantime",
- "parking_lot",
- "prost",
- "prost-types",
- "serde",
- "serde_json",
- "thread_local",
- "tokio",
- "tokio-stream",
- "tonic",
- "tonic-web",
- "tower",
- "tower-http",
- "tracing",
- "tracing-core",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "content_inspector"
 version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -713,6 +671,77 @@ dependencies = [
  "flate2",
  "nom",
  "num-traits",
+]
+
+[[package]]
+name = "hds_console-api"
+version = "0.6.0"
+dependencies = [
+ "futures-core",
+ "prost",
+ "prost-build",
+ "prost-types",
+ "tonic",
+ "tonic-build",
+ "tracing-core",
+]
+
+[[package]]
+name = "hds_console-subscriber"
+version = "0.2.0"
+dependencies = [
+ "crossbeam-channel",
+ "crossbeam-utils",
+ "futures",
+ "futures-task",
+ "hdrhistogram",
+ "hds_console-api",
+ "http",
+ "humantime",
+ "parking_lot",
+ "prost",
+ "prost-types",
+ "serde",
+ "serde_json",
+ "thread_local",
+ "tokio",
+ "tokio-stream",
+ "tonic",
+ "tonic-web",
+ "tower",
+ "tower-http",
+ "tracing",
+ "tracing-core",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "hds_tokio-console"
+version = "0.1.10"
+dependencies = [
+ "clap",
+ "clap_complete",
+ "color-eyre",
+ "crossterm",
+ "dirs",
+ "futures",
+ "h2",
+ "hdrhistogram",
+ "hds_console-api",
+ "humantime",
+ "once_cell",
+ "prost-types",
+ "ratatui",
+ "regex",
+ "serde",
+ "tokio",
+ "toml",
+ "tonic",
+ "tower",
+ "tracing",
+ "tracing-journald",
+ "tracing-subscriber",
+ "trycmd",
 ]
 
 [[package]]
@@ -1747,35 +1776,6 @@ dependencies = [
  "tokio-macros",
  "tracing",
  "windows-sys 0.48.0",
-]
-
-[[package]]
-name = "tokio-console"
-version = "0.1.10"
-dependencies = [
- "clap",
- "clap_complete",
- "color-eyre",
- "console-api",
- "crossterm",
- "dirs",
- "futures",
- "h2",
- "hdrhistogram",
- "humantime",
- "once_cell",
- "prost-types",
- "ratatui",
- "regex",
- "serde",
- "tokio",
- "toml",
- "tonic",
- "tower",
- "tracing",
- "tracing-journald",
- "tracing-subscriber",
- "trycmd",
 ]
 
 [[package]]

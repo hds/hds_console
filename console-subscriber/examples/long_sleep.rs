@@ -1,6 +1,6 @@
 use std::time::Duration;
 
-use console_subscriber::ConsoleLayer;
+use hds_console_subscriber::ConsoleLayer;
 use tokio::task::{self, yield_now};
 use tracing::info;
 

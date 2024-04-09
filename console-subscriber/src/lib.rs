@@ -916,7 +916,7 @@ impl Server {
     ///
     /// ```rust
     /// # async fn docs() -> Result<(), Box<dyn std::error::Error + Send + Sync + 'static>> {
-    /// # let (_, server) = console_subscriber::ConsoleLayer::new();
+    /// # let (_, server) = hds_console_subscriber::ConsoleLayer::new();
     /// server.serve_with(tonic::transport::Server::default()).await
     /// # }
     /// ```
@@ -972,7 +972,7 @@ impl Server {
     ///
     /// ```rust
     /// # async fn docs() -> Result<(), Box<dyn std::error::Error + Send + Sync + 'static>> {
-    /// # let (_, server) = console_subscriber::ConsoleLayer::new();
+    /// # let (_, server) = hds_console_subscriber::ConsoleLayer::new();
     /// server.serve_with_grpc_web(tonic::transport::Server::default()).await
     /// # }
     /// ```
@@ -983,7 +983,7 @@ impl Server {
     /// ```rust
     /// # use std::{thread, time::Duration};
     /// #
-    /// use console_subscriber::{ConsoleLayer, ServerParts};
+    /// use hds_console_subscriber::{ConsoleLayer, ServerParts};
     /// use tonic_web::GrpcWebLayer;
     /// use tower_web::cors::{CorsLayer, AllowOrigin};
     /// use http::header::HeaderName;
@@ -1106,7 +1106,7 @@ impl Server {
     /// other endpoints from the same gRPC server.
     ///
     /// ```
-    /// use console_subscriber::{ConsoleLayer, ServerParts};
+    /// use hds_console_subscriber::{ConsoleLayer, ServerParts};
     ///
     /// # let runtime = tokio::runtime::Builder::new_current_thread()
     /// #     .enable_all()

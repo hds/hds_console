@@ -13,7 +13,7 @@ fn cli_tests() {
     env::set_var("COLORTERM", "truecolor");
 
     let t = trycmd::TestCases::new();
-    let console = trycmd::cargo::cargo_bin("tokio-console");
+    let console = trycmd::cargo::cargo_bin("hds_tokio-console");
     t.register_bin("tokio-console", console);
     let readme_path = std::path::Path::new(&std::env::var("CARGO_MANIFEST_DIR").unwrap())
         .parent()
