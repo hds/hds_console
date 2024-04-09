@@ -70,6 +70,7 @@ pub(crate) enum UpdateKind {
     /// The TaskView is exited
     ExitTaskView,
     /// A new resource is selected
+    #[allow(dead_code)]
     SelectResource(u64),
     /// No significant change
     Other,
