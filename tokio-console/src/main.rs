@@ -41,6 +41,10 @@ async fn main() -> color_eyre::Result<()> {
     args.trace_init()?;
     tracing::debug!(?args.target_addr, ?args.view_options);
 
+    if args.magic {
+        tracing::debug!("magic enabled");
+    }
+
     match args.subcmd {
         Some(config::OptionalCmd::GenConfig) => {
             // Generate a default config file and exit.

@@ -51,6 +51,12 @@ pub struct Config {
     #[clap(long = "log", env = "RUST_LOG")]
     log_filter: Option<LogFilter>,
 
+    /// Magic
+    ///
+    /// Support magic!
+    #[clap(long = "magic")]
+    pub(crate) magic: bool,
+
     /// Enable lint warnings.
     ///
     /// This is a comma-separated list of warnings to enable.
@@ -374,6 +380,7 @@ struct ConfigFile {
     default_target_addr: Option<String>,
     log: Option<String>,
     warnings: Vec<KnownWarnings>,
+    magic: Option<bool>,
     allow_warnings: Option<AllowedWarnings>,
     log_directory: Option<PathBuf>,
     retention: Option<RetainFor>,
@@ -563,6 +570,7 @@ impl Config {
             log_directory: other.log_directory.or(self.log_directory),
             target_addr: other.target_addr.or(self.target_addr),
             log_filter: other.log_filter.or(self.log_filter),
+            magic: other.magic || self.magic,
             warnings: {
                 let mut warns: Vec<KnownWarnings> = other.warnings;
                 warns.extend(self.warnings);
@@ -590,6 +598,7 @@ impl Default for Config {
             log_filter: Some(LogFilter(
                 filter::Targets::new().with_default(filter::LevelFilter::OFF),
             )),
+            magic: false,
             warnings: KnownWarnings::default_enabled_warnings(),
             allow_warnings: None,
             log_directory: Some(default_log_directory()),
@@ -827,6 +836,7 @@ impl From<Config> for ConfigFile {
             default_target_addr: config.target_addr.map(|addr| addr.to_string()),
             log: config.log_filter.map(|filter| filter.to_string()),
             log_directory: config.log_directory,
+            magic: Some(config.magic),
             warnings: config.warnings,
             allow_warnings: config.allow_warnings,
             retention: config.retain_for,
@@ -851,6 +861,7 @@ impl TryFrom<ConfigFile> for Config {
         Ok(Config {
             target_addr: value.target_addr()?,
             log_filter: value.log_filter()?,
+            magic: value.magic.unwrap_or_default(),
             warnings: value.warnings.clone(),
             allow_warnings: value.allow_warnings.clone(),
             log_directory: value.log_directory.take(),
