@@ -1,0 +1,11 @@
+[workspace]
+changelog_config = "cliff.toml"
+
+[[package]]
+name = "hds_console-api"
+
+[[package]]
+name = "hds_console-subscriber"
+
+[[package]]
+name = "hds_tokio-console"
