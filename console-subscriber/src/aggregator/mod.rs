@@ -340,6 +340,7 @@ impl Aggregator {
             new_tasks: self.tasks.as_proto_list(include, &self.base_time),
             stats_update: self.task_stats.as_proto(include, &self.base_time),
             dropped_events: self.shared.dropped_tasks.swap(0, AcqRel) as u64,
+            another_field: 0,
         }
     }
 
