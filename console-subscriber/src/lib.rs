@@ -285,6 +285,7 @@ impl ConsoleLayer {
             ?base_time,
             "configured console subscriber"
         );
+        tracing::debug!("red");
 
         let (tx, events) = mpsc::channel(config.event_buffer_capacity);
         let (subscribe, rpcs) = mpsc::channel(256);
