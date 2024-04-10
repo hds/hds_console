@@ -1,7 +1,7 @@
 // this file is here to make a binary target so that cargo metadata works with this crate
 #![doc = include_str!("../README.md")]
 
-/// # Configuration Reference
+/// # Configuration Reference (blue)
 ///
 /// `tokio-console`'s behavior can be configured in two ways: via command-line
 /// arguments, or using a [TOML] config file.
