@@ -34,6 +34,9 @@ pub struct TaskUpdate {
     /// this will always be 0.
     #[prost(uint64, tag = "4")]
     pub dropped_events: u64,
+    /// Another field.
+    #[prost(uint64, tag = "5")]
+    pub another_field: u64,
 }
 /// A task details update
 #[allow(clippy::derive_partial_eq_without_eq)]

@@ -37,6 +37,8 @@ message TaskUpdate {
     // If the application's instrumentation ensures reliable delivery of events,
     // this will always be 0.
     uint64 dropped_events = 4;
+    // Another field.
+    uint64 another_field = 5;
 }
 
 // A task details update

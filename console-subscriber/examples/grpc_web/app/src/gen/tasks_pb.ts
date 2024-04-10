@@ -57,6 +57,13 @@ export class TaskUpdate extends Message<TaskUpdate> {
    */
   droppedEvents = protoInt64.zero;
 
+  /**
+   * Another field.
+   *
+   * @generated from field: uint64 another_field = 5;
+   */
+  anotherField = protoInt64.zero;
+
   constructor(data?: PartialMessage<TaskUpdate>) {
     super();
     proto3.util.initPartial(data, this);
@@ -68,6 +75,7 @@ export class TaskUpdate extends Message<TaskUpdate> {
     { no: 1, name: "new_tasks", kind: "message", T: Task, repeated: true },
     { no: 3, name: "stats_update", kind: "map", K: 4 /* ScalarType.UINT64 */, V: {kind: "message", T: Stats} },
     { no: 4, name: "dropped_events", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 5, name: "another_field", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TaskUpdate {
