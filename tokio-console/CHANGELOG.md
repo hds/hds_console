@@ -3,8 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.1.13 - (2024-04-10)
+## 0.1.14 - (2024-04-12)
 
+### Misc
+
+- Updated console-api version to 0.7.0 ([#9](https://github.com/hds/hds_console/pull/9)) ([84c56a0](https://github.com/tokio-rs/console/commit/84c56a0ec67c88fe89db79f5a4369fe5ee2124e8))
+
+## 0.1.13 - (2024-04-10)
 
 ### Documented
 
