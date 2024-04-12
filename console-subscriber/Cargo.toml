@@ -1,6 +1,6 @@
 [package]
 name = "hds_console-subscriber"
-version = "0.3.0"
+version = "0.2.3"
 license = "MIT"
 edition = "2021"
 rust-version = "1.64.0"
